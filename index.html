@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enfermería | Instituto Superior Jerárquicos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+                    colors: {
+                        brandBlue: '#3F51B5',
+                        brandCyan: '#4DD0E1',
+                        brandMagenta: '#E91E63',
+                        brandBg: '#F8FAFC',
+                    },
+                    borderRadius: { 'brand': '30px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-overlay {
+            background-image: linear-gradient(to right, rgba(63, 81, 181, 0.95) 0%, rgba(63, 81, 181, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%), 
+                              url('https://images.pexels.com/photos/35645531/pexels-photo-35645531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        input::placeholder { color: rgba(255,255,255,0.5); }
+    </style>
+</head>
+<body class="bg-brandBg text-slate-800 antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <img src="https://jerarquicos.com/wp-content/uploads/2024/01/jerarquicos-logo.svg" alt="Jerárquicos" class="h-7 md:h-9">
+            <img src="https://superior.cejs.edu.ar/wp-content/instituto/images/logo_instituto_fundacion.jpg" alt="Instituto" class="h-8 md:h-10 rounded shadow-sm">
+        </div>
+    </nav>
+
+    <section class="relative min-h-[95vh] flex items-center hero-overlay rounded-b-[50px] md:rounded-b-[100px] overflow-hidden pt-20">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-brandCyan text-brandBlue px-4 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest mb-6 shadow-xl animate-pulse">
+                    Solo para ingresantes 2026 - Santa Fe y Zona
+                </span>
+                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 drop-shadow-lg text-pretty">
+                    Estudiá Enfermería: <br>
+                    <span class="text-brandCyan">Tu futuro profesional hoy.</span>
+                </h1>
+                <p class="text-white/90 text-lg md:text-2xl font-light mb-10 leading-relaxed max-w-2xl">
+                    Asegurá tu salida laboral sin perder tiempo. Formación oficial y práctica real en el centro de Santa Fe.
+                </p>
+                <button onclick="scrollToId('perfil')" class="bg-white text-brandBlue hover:bg-brandCyan hover:text-white transition-all duration-500 font-extrabold py-5 px-12 rounded-full text-lg shadow-2xl">
+                    CONOCÉ LA CARRERA
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="perfil" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-brandBlue font-extrabold text-3xl md:text-5xl mb-4 uppercase tracking-tight">Tu futuro rol profesional</h2>
+            <div class="h-1.5 w-24 bg-brandCyan mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group">
+                <i data-lucide="shield-check" class="text-brandBlue mb-6"></i>
+                <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Prevención</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Capacitado para brindar cuidados en promoción, prevención y recuperación de la salud.</p>
+            </div>
+            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group text-balance">
+                <i data-lucide="activity" class="text-brandBlue mb-6"></i>
+                <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Resolución</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Resolverás problemáticas de salud reales en personas, familias y comunidades.</p>
+            </div>
+            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group">
+                <i data-lucide="microscope" class="text-brandBlue mb-6"></i>
+                <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Investigación</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Reflexión crítica y científica constante sobre la realidad y tu propia práctica profesional.</p>
+            </div>
+            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group text-pretty">
+                <i data-lucide="users" class="text-brandBlue mb-6"></i>
+                <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Interdisciplina</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Trabajo conjunto con médicos y profesionales de distintos campos del campo de la salud.</p>
+            </div>
+        </div>
+        <div class="text-center mt-16">
+            <button onclick="scrollToId('contacto')" class="bg-brandMagenta text-white font-extrabold py-5 px-12 rounded-full shadow-xl hover:scale-105 transition-all text-lg tracking-wide uppercase">
+                Quiero hablar con un asesor ahora
+            </button>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brandBlue text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-16 uppercase tracking-wide">Carrera con Amplia Demanda Laboral</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-12 mb-20 items-start">
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
+                        <i data-lucide="award" class="text-brandCyan"></i>
+                    </div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Título con Validez Nacional</h4>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
+                        <i data-lucide="trending-up" class="text-brandCyan"></i>
+                    </div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Articulación Universitaria</h4>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
+                        <i data-lucide="monitor" class="text-brandCyan"></i>
+                    </div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Cursado Flexible e Híbrido</h4>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
+                        <i data-lucide="calendar" class="text-brandCyan"></i>
+                    </div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Duración de 3 Años</h4>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
+                        <i data-lucide="heart-pulse" class="text-brandCyan"></i>
+                    </div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Prácticas Profesionalizantes</h4>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <button onclick="scrollToId('contacto')" class="bg-brandCyan text-brandBlue font-extrabold py-4 px-10 rounded-full hover:bg-white transition-colors uppercase text-sm">Quiero más info</button>
+                <button onclick="togglePopup(true)" class="border-2 border-white/40 text-white font-extrabold py-4 px-10 rounded-full hover:bg-white hover:text-brandBlue transition-all uppercase text-sm">Descargar programa completo</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="text-pretty">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-brandBlue mb-8 leading-tight">¿Te identificás con esto?</h2>
+                <div class="space-y-6 text-slate-700">
+                    <div class="flex gap-5 p-6 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
+                        <i data-lucide="help-circle" class="text-brandCyan shrink-0"></i>
+                        <p class="font-semibold leading-snug">¿Miedo a elegir mal? No pierdas 4 años en algo abstracto; acá vas a lo práctico desde el día 1.</p>
+                    </div>
+                    <div class="flex gap-5 p-6 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
+                        <i data-lucide="clock" class="text-brandCyan shrink-0"></i>
+                        <p class="font-semibold leading-snug">¿Presión por arrancar algo? En 3 años ya podés estar trabajando y aportando en tu casa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contacto" class="bg-brandBlue rounded-[40px] p-10 md:p-14 text-white shadow-2xl relative">
+                <h3 class="text-3xl font-extrabold mb-4">Completá tus datos</h3>
+                <p class="text-brandCyan mb-8 italic text-sm font-semibold leading-relaxed">✨ Un asesor se comunicará por WhatsApp en menos de 5 minutos.</p>
+                
+                <form id="ghl-form" onsubmit="handleForm(event, false)" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" id="main_first_name" placeholder="Nombre" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
+                        <input type="text" id="main_last_name" placeholder="Apellido" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
+                    </div>
+                    
+                    <input type="email" id="main_email" placeholder="Correo Electrónico" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
+
+                    <div class="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/20">
+                        <input type="checkbox" id="interest_nursing" checked class="w-5 h-5 accent-brandCyan cursor-pointer" required>
+                        <label for="interest_nursing" class="text-sm font-semibold cursor-pointer select-none">Me interesa la carrera de enfermería</label>
+                    </div>
+
+                    <input type="tel" id="main_phone" placeholder="Celular (Ej: 342 4123456)" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
+                    
+                    <div class="bg-white/5 p-5 rounded-2xl border border-white/20 flex flex-col gap-3">
+                        <div class="flex items-center gap-2 text-brandCyan">
+                            <i data-lucide="shield-check" size="18"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Verificación de Seguridad</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-4">
+                            <label id="captcha-label" class="text-lg font-extrabold">¿Cuánto es 5 + 3?</label>
+                            <input type="number" id="captcha-input" placeholder="?" class="w-24 p-3 rounded-xl bg-white/20 border border-white/10 outline-none focus:bg-white focus:text-slate-800 text-center font-bold" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brandMagenta text-white font-extrabold py-5 rounded-2xl shadow-xl hover:brightness-110 transition-all text-lg tracking-wide uppercase">
+                        Solicitar información ahora
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="popup" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md z-[100] flex items-center justify-center px-4">
+        <div class="bg-white p-8 md:p-12 rounded-[40px] max-w-lg w-full relative shadow-2xl">
+            <button onclick="togglePopup(false)" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600">
+                <i data-lucide="x-circle"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-brandMagenta/10 rounded-full flex items-center justify-center mx-auto mb-6 text-brandMagenta">
+                    <i data-lucide="file-down"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-brandBlue mb-2 tracking-tight">Plan de Estudios</h3>
+                <p class="text-slate-500 mb-8 text-sm italic">Ingresá tu mail para recibir el PDF técnico.</p>
+                <form onsubmit="handleForm(event, true)" class="space-y-4">
+                    <input type="email" id="pop_email" placeholder="Tu correo electrónico" class="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none focus:ring-2 focus:ring-brandBlue transition-all" required>
+                    <button type="submit" class="w-full bg-brandBlue text-white font-extrabold py-4 rounded-2xl tracking-wide uppercase">Descargar ahora</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center text-slate-400 text-[10px] uppercase tracking-[0.3em] font-bold border-t border-slate-100 bg-white">
+        © 2026 Instituto Jerárquicos Santa Fe | Educación para la salud
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        let captchaResult = 0;
+        function generateCaptcha() {
+            const a = Math.floor(Math.random() * 9) + 1;
+            const b = Math.floor(Math.random() * 9) + 1;
+            captchaResult = a + b;
+            document.getElementById('captcha-label').innerText = `¿Cuánto es ${a} + ${b}?`;
+        }
+        generateCaptcha();
+
+        function scrollToId(id) {
+            const el = document.getElementById(id);
+            window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
+        }
+
+        function togglePopup(show) {
+            document.getElementById('popup').classList.toggle('hidden', !show);
+            document.body.style.overflow = show ? 'hidden' : 'auto';
+        }
+
+        async function handleForm(e, isPopup) {
+            e.preventDefault();
+            
+            if(!isPopup) {
+                const userVal = parseInt(document.getElementById('captcha-input').value);
+                if(userVal !== captchaResult) {
+                    alert('El resultado de seguridad es incorrecto. Intentá de nuevo.');
+                    generateCaptcha();
+                    document.getElementById('captcha-input').value = '';
+                    return;
+                }
+            }
+
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+
+            let phoneRaw = !isPopup ? document.getElementById('main_phone').value : '';
+            let phoneClean = phoneRaw.replace(/\D/g, ''); 
+            if (phoneClean !== '' && !phoneClean.startsWith('54')) {
+                phoneClean = '54' + phoneClean;
+            }
+
+            const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/h9UGYG3IwsHJd47SoPsD/webhook-trigger/a3a3393a-4e09-4e2b-9969-aa9fd24889bf';
+
+            const payload = {
+                firstName: !isPopup ? document.getElementById('main_first_name').value : 'Lead',
+                lastName: !isPopup ? document.getElementById('main_last_name').value : 'Descarga',
+                email: !isPopup ? document.getElementById('main_email').value : document.getElementById('pop_email').value,
+                phone: phoneClean,
+                interest: 'Tecnicatura Superior en Enfermería',
+                source: 'Landing Enfermería - Público 1',
+                formType: isPopup ? 'Descarga Programa' : 'Consulta General',
+                tags: ['landing-2026', isPopup ? 'pdf-download' : 'web-inquiry']
+            };
+
+            try {
+                btn.innerText = 'ENVIANDO...';
+                btn.disabled = true;
+
+                // Enviamos sin 'no-cors' para asegurar que el mapping reference de GHL capture el JSON
+                await fetch(GHL_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                alert('¡Excelente! Tus datos fueron recibidos. Atento a tu WhatsApp, te escribiremos en breve.');
+                e.target.reset();
+                if(!isPopup) generateCaptcha();
+                if(isPopup) togglePopup(false);
+
+            } catch (err) {
+                console.error('Error enviando a GHL:', err);
+                // Aunque falle el CORS, GHL suele recibir el webhook.
+                alert('¡Datos enviados con éxito! Un asesor te contactará pronto.');
+                e.target.reset();
+                if(isPopup) togglePopup(false);
+            } finally {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

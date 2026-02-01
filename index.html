@@ -36,7 +36,6 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.4);
         }
-        input::placeholder { color: rgba(255,255,255,0.5); }
     </style>
 </head>
 <body class="bg-brandBg text-slate-800 antialiased font-sans">
@@ -54,16 +53,21 @@
                 <span class="inline-block bg-brandCyan text-brandBlue px-4 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest mb-6 shadow-xl animate-pulse">
                     Solo para ingresantes 2026 - Santa Fe y Zona
                 </span>
-                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 drop-shadow-lg text-pretty">
+                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 drop-shadow-lg">
                     Estudiá Enfermería: <br>
                     <span class="text-brandCyan">Tu futuro profesional hoy.</span>
                 </h1>
                 <p class="text-white/90 text-lg md:text-2xl font-light mb-10 leading-relaxed max-w-2xl">
                     Asegurá tu salida laboral sin perder tiempo. Formación oficial y práctica real en el centro de Santa Fe.
                 </p>
-                <button onclick="scrollToId('perfil')" class="bg-white text-brandBlue hover:bg-brandCyan hover:text-white transition-all duration-500 font-extrabold py-5 px-12 rounded-full text-lg shadow-2xl">
-                    CONOCÉ LA CARRERA
-                </button>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="scrollToId('perfil')" class="bg-white text-brandBlue hover:bg-brandCyan hover:text-white transition-all duration-500 font-extrabold py-5 px-10 rounded-full text-lg shadow-2xl hover:scale-105">
+                        CONOCÉ LA CARRERA
+                    </button>
+                    <button onclick="togglePopup(true)" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brandBlue transition-all duration-500 font-extrabold py-5 px-10 rounded-full text-lg shadow-xl hover:scale-105">
+                        DESCARGÁ EL PROGRAMA
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -77,9 +81,9 @@
             <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group">
                 <i data-lucide="shield-check" class="text-brandBlue mb-6"></i>
                 <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Prevención</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Capacitado para brindar cuidados en promoción, prevención y recuperación de la salud.</p>
+                <p class="text-slate-500 text-sm leading-relaxed">Capacitado para brindar cuidados en el marco de promoción y prevención de la salud.</p>
             </div>
-            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group text-balance">
+            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group">
                 <i data-lucide="activity" class="text-brandBlue mb-6"></i>
                 <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Resolución</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">Resolverás problemáticas de salud reales en personas, familias y comunidades.</p>
@@ -87,106 +91,114 @@
             <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group">
                 <i data-lucide="microscope" class="text-brandBlue mb-6"></i>
                 <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Investigación</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Reflexión crítica y científica constante sobre la realidad y tu propia práctica profesional.</p>
+                <p class="text-slate-500 text-sm leading-relaxed">Reflexión crítica y científica constante sobre la realidad y tu propia práctica.</p>
             </div>
-            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group text-pretty">
+            <div class="glass-card p-10 rounded-brand shadow-sm hover:shadow-2xl transition-all group">
                 <i data-lucide="users" class="text-brandBlue mb-6"></i>
                 <h3 class="font-extrabold text-xl mb-4 text-brandBlue">Interdisciplina</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Trabajo conjunto con médicos y profesionales de distintos campos del campo de la salud.</p>
+                <p class="text-slate-500 text-sm leading-relaxed">Trabajo conjunto con médicos y especialistas de distintos campos de la salud.</p>
             </div>
-        </div>
-        <div class="text-center mt-16">
-            <button onclick="scrollToId('contacto')" class="bg-brandMagenta text-white font-extrabold py-5 px-12 rounded-full shadow-xl hover:scale-105 transition-all text-lg tracking-wide uppercase">
-                Quiero hablar con un asesor ahora
-            </button>
         </div>
     </section>
 
     <section class="py-24 bg-brandBlue text-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-16 uppercase tracking-wide">Carrera con Amplia Demanda Laboral</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-16 leading-tight uppercase tracking-wide">Carrera con Amplia Demanda Laboral</h2>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-12 mb-20 items-start">
                 <div class="space-y-4">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
                         <i data-lucide="award" class="text-brandCyan"></i>
                     </div>
-                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Título con Validez Nacional</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Validez Nacional</h4>
                 </div>
                 <div class="space-y-4">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
                         <i data-lucide="trending-up" class="text-brandCyan"></i>
                     </div>
-                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Articulación Universitaria</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Articulación Univ.</h4>
                 </div>
                 <div class="space-y-4">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
                         <i data-lucide="monitor" class="text-brandCyan"></i>
                     </div>
-                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Cursado Flexible e Híbrido</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Cursado Flexible</h4>
                 </div>
                 <div class="space-y-4">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
                         <i data-lucide="calendar" class="text-brandCyan"></i>
                     </div>
-                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Duración de 3 Años</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">3 Años de Duración</h4>
                 </div>
                 <div class="space-y-4">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto border border-white/20">
                         <i data-lucide="heart-pulse" class="text-brandCyan"></i>
                     </div>
-                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Prácticas Profesionalizantes</h4>
+                    <h4 class="font-bold text-xs uppercase tracking-wider leading-tight">Prácticas Reales</h4>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <button onclick="scrollToId('contacto')" class="bg-brandCyan text-brandBlue font-extrabold py-4 px-10 rounded-full hover:bg-white transition-colors uppercase text-sm">Quiero más info</button>
-                <button onclick="togglePopup(true)" class="border-2 border-white/40 text-white font-extrabold py-4 px-10 rounded-full hover:bg-white hover:text-brandBlue transition-all uppercase text-sm">Descargar programa completo</button>
+                <button onclick="scrollToId('contacto')" class="bg-brandCyan text-brandBlue font-extrabold py-4 px-10 rounded-full hover:bg-white transition-colors uppercase text-sm shadow-lg">Quiero más info</button>
+                <button onclick="togglePopup(true)" class="bg-white text-brandBlue border-2 border-white font-extrabold py-4 px-10 rounded-full hover:bg-brandCyan hover:text-white transition-all uppercase text-sm shadow-xl">
+                    Descargar programa completo
+                </button>
             </div>
         </div>
     </section>
 
     <section class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="text-pretty">
+            <div>
                 <h2 class="text-4xl md:text-5xl font-extrabold text-brandBlue mb-8 leading-tight">¿Te identificás con esto?</h2>
-                <div class="space-y-6 text-slate-700">
-                    <div class="flex gap-5 p-6 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
-                        <i data-lucide="help-circle" class="text-brandCyan shrink-0"></i>
-                        <p class="font-semibold leading-snug">¿Miedo a elegir mal? No pierdas 4 años en algo abstracto; acá vas a lo práctico desde el día 1.</p>
+                <div class="space-y-5 text-slate-700">
+                    <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
+                        <i data-lucide="alert-circle" class="text-brandCyan shrink-0"></i>
+                        <p class="font-semibold leading-snug">¿Miedo a elegir mal y perder tiempo? Acá vas a lo práctico desde el primer día.</p>
                     </div>
-                    <div class="flex gap-5 p-6 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
-                        <i data-lucide="clock" class="text-brandCyan shrink-0"></i>
-                        <p class="font-semibold leading-snug">¿Presión por arrancar algo? En 3 años ya podés estar trabajando y aportando en tu casa.</p>
+                    <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
+                        <i data-lucide="trending-up" class="text-brandCyan shrink-0"></i>
+                        <p class="font-semibold leading-snug">¿Sentís presión por "arrancar algo"? En 3 años ya sos profesional y podés aportar en tu casa.</p>
+                    </div>
+                    <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
+                        <i data-lucide="briefcase" class="text-brandCyan shrink-0"></i>
+                        <p class="font-semibold leading-snug">¿Incertidumbre laboral? La salud tiene demanda constante: enfermeros faltan siempre.</p>
+                    </div>
+                    <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
+                        <i data-lucide="dollar-sign" class="text-brandCyan shrink-0"></i>
+                        <p class="font-semibold leading-snug">¿Temor a ser una carga económica? Estudiá una carrera corta con salida laboral real y segura.</p>
+                    </div>
+                    <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border-l-8 border-brandCyan">
+                        <i data-lucide="clock-4" class="text-brandCyan shrink-0"></i>
+                        <p class="font-semibold leading-snug">¿Dudás si vas a poder estudiar y trabajar? Nuestro cursado flexible está hecho para vos.</p>
                     </div>
                 </div>
             </div>
 
             <div id="contacto" class="bg-brandBlue rounded-[40px] p-10 md:p-14 text-white shadow-2xl relative">
-                <h3 class="text-3xl font-extrabold mb-4">Completá tus datos</h3>
-                <p class="text-brandCyan mb-8 italic text-sm font-semibold leading-relaxed">✨ Un asesor se comunicará por WhatsApp en menos de 5 minutos.</p>
+                <h3 class="text-3xl font-extrabold mb-4 uppercase tracking-tight">Completá tus datos</h3>
+                <p class="text-brandCyan mb-8 italic text-sm font-semibold">✨ Un asesor se comunicará por WhatsApp en menos de 5 minutos.</p>
                 
-                <form id="ghl-form" onsubmit="handleForm(event, false)" class="space-y-4">
+                <form onsubmit="handleForm(event, 'main')" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" id="main_first_name" placeholder="Nombre" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
-                        <input type="text" id="main_last_name" placeholder="Apellido" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
+                        <input type="text" data-field="first_name" placeholder="Nombre" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
+                        <input type="text" data-field="last_name" placeholder="Apellido" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
                     </div>
+                    <input type="email" data-field="email" placeholder="Correo Electrónico" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
                     
-                    <input type="email" id="main_email" placeholder="Correo Electrónico" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
-
                     <div class="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/20">
-                        <input type="checkbox" id="interest_nursing" checked class="w-5 h-5 accent-brandCyan cursor-pointer" required>
-                        <label for="interest_nursing" class="text-sm font-semibold cursor-pointer select-none">Me interesa la carrera de enfermería</label>
+                        <input type="checkbox" data-field="interest" checked class="w-5 h-5 accent-brandCyan cursor-pointer" required>
+                        <label class="text-sm font-semibold cursor-pointer select-none">Me interesa la carrera de enfermería</label>
                     </div>
 
-                    <input type="tel" id="main_phone" placeholder="Celular (Ej: 342 4123456)" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all" required>
+                    <input type="tel" data-field="phone" placeholder="Celular (Ej: 342 4123456)" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
                     
                     <div class="bg-white/5 p-5 rounded-2xl border border-white/20 flex flex-col gap-3">
                         <div class="flex items-center gap-2 text-brandCyan">
                             <i data-lucide="shield-check" size="18"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Verificación de Seguridad</span>
+                            <span class="text-xs font-bold uppercase tracking-widest">Seguridad</span>
                         </div>
                         <div class="flex items-center justify-between gap-4">
-                            <label id="captcha-label" class="text-lg font-extrabold">¿Cuánto es 5 + 3?</label>
-                            <input type="number" id="captcha-input" placeholder="?" class="w-24 p-3 rounded-xl bg-white/20 border border-white/10 outline-none focus:bg-white focus:text-slate-800 text-center font-bold" required>
+                            <label class="captcha-label text-lg font-extrabold tracking-tight">Cargando...</label>
+                            <input type="number" data-field="captcha" placeholder="?" class="w-24 p-3 rounded-xl bg-white/20 border border-white/10 outline-none focus:bg-white focus:text-slate-800 text-center font-bold" required>
                         </div>
                     </div>
 
@@ -198,40 +210,63 @@
         </div>
     </section>
 
-    <div id="popup" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md z-[100] flex items-center justify-center px-4">
-        <div class="bg-white p-8 md:p-12 rounded-[40px] max-w-lg w-full relative shadow-2xl">
-            <button onclick="togglePopup(false)" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600">
+    <div id="popup" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md z-[100] flex items-center justify-center px-4 overflow-y-auto pt-20 pb-10">
+        <div class="bg-brandBlue p-8 md:p-12 rounded-[40px] max-w-xl w-full relative shadow-2xl text-white">
+            <button onclick="togglePopup(false)" class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors">
                 <i data-lucide="x-circle"></i>
             </button>
-            <div class="text-center">
-                <div class="w-16 h-16 bg-brandMagenta/10 rounded-full flex items-center justify-center mx-auto mb-6 text-brandMagenta">
-                    <i data-lucide="file-down"></i>
-                </div>
-                <h3 class="text-2xl font-extrabold text-brandBlue mb-2 tracking-tight">Plan de Estudios</h3>
-                <p class="text-slate-500 mb-8 text-sm italic">Ingresá tu mail para recibir el PDF técnico.</p>
-                <form onsubmit="handleForm(event, true)" class="space-y-4">
-                    <input type="email" id="pop_email" placeholder="Tu correo electrónico" class="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none focus:ring-2 focus:ring-brandBlue transition-all" required>
-                    <button type="submit" class="w-full bg-brandBlue text-white font-extrabold py-4 rounded-2xl tracking-wide uppercase">Descargar ahora</button>
-                </form>
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-extrabold uppercase tracking-tight">Descargar Programa</h3>
+                <p class="text-brandCyan italic text-sm mt-2 font-semibold">✨ Recibí el PDF y hablá con un asesor especializado.</p>
             </div>
+            
+            <form onsubmit="handleForm(event, 'popup')" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    <input type="text" data-field="first_name" placeholder="Nombre" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
+                    <input type="text" data-field="last_name" placeholder="Apellido" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
+                </div>
+                <input type="email" data-field="email" placeholder="Correo Electrónico" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
+                <div class="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/20 text-left">
+                    <input type="checkbox" data-field="interest" checked class="w-5 h-5 accent-brandCyan" required>
+                    <label class="text-sm font-semibold select-none">Me interesa la carrera de enfermería</label>
+                </div>
+                <input type="tel" data-field="phone" placeholder="Celular (Ej: 342 4123456)" class="w-full p-4 rounded-2xl bg-white/10 border border-white/20 outline-none focus:bg-white focus:text-slate-800 transition-all placeholder:text-white/50" required>
+                
+                <div class="bg-white/5 p-5 rounded-2xl border border-white/20 flex flex-col gap-3 text-left">
+                    <div class="flex items-center gap-2 text-brandCyan">
+                        <i data-lucide="shield-check" size="18"></i>
+                        <span class="text-xs font-bold uppercase tracking-widest">Seguridad</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <label class="captcha-label text-lg font-extrabold tracking-tight">Cargando...</label>
+                        <input type="number" data-field="captcha" placeholder="?" class="w-24 p-3 rounded-xl bg-white/20 border border-white/10 outline-none focus:bg-white focus:text-slate-800 text-center font-bold" required>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-brandMagenta text-white font-extrabold py-5 rounded-2xl shadow-xl hover:brightness-110 transition-all text-lg tracking-wide uppercase">
+                    Descargar programa ahora
+                </button>
+            </form>
         </div>
     </div>
 
     <footer class="py-12 text-center text-slate-400 text-[10px] uppercase tracking-[0.3em] font-bold border-t border-slate-100 bg-white">
-        © 2026 Instituto Jerárquicos Santa Fe | Educación para la salud
+        © 2026 Instituto Jerárquicos Santa Fe | Formación Superior
     </footer>
 
     <script>
         lucide.createIcons();
 
-        let captchaResult = 0;
-        function generateCaptcha() {
+        // Lógica Captcha compartida
+        let currentCaptchaResult = 0;
+        function updateCaptchas() {
             const a = Math.floor(Math.random() * 9) + 1;
             const b = Math.floor(Math.random() * 9) + 1;
-            captchaResult = a + b;
-            document.getElementById('captcha-label').innerText = `¿Cuánto es ${a} + ${b}?`;
+            currentCaptchaResult = a + b;
+            document.querySelectorAll('.captcha-label').forEach(label => {
+                label.innerText = `¿Cuánto es ${a} + ${b}?`;
+            });
         }
-        generateCaptcha();
+        updateCaptchas();
 
         function scrollToId(id) {
             const el = document.getElementById(id);
@@ -243,63 +278,60 @@
             document.body.style.overflow = show ? 'hidden' : 'auto';
         }
 
-        async function handleForm(e, isPopup) {
+        // Envío a GHL Webhook
+        async function handleForm(e, type) {
             e.preventDefault();
-            
-            if(!isPopup) {
-                const userVal = parseInt(document.getElementById('captcha-input').value);
-                if(userVal !== captchaResult) {
-                    alert('El resultado de seguridad es incorrecto. Intentá de nuevo.');
-                    generateCaptcha();
-                    document.getElementById('captcha-input').value = '';
-                    return;
-                }
+            const form = e.target;
+            const captchaInput = form.querySelector('[data-field="captcha"]');
+
+            if (parseInt(captchaInput.value) !== currentCaptchaResult) {
+                alert('El resultado de seguridad es incorrecto. Intentá de nuevo.');
+                updateCaptchas();
+                captchaInput.value = '';
+                return;
             }
 
-            const btn = e.target.querySelector('button');
+            const btn = form.querySelector('button');
             const originalText = btn.innerText;
 
-            let phoneRaw = !isPopup ? document.getElementById('main_phone').value : '';
+            // Normalización de teléfono (Prefijo 54 Argentina)
+            let phoneRaw = form.querySelector('[data-field="phone"]').value;
             let phoneClean = phoneRaw.replace(/\D/g, ''); 
             if (phoneClean !== '' && !phoneClean.startsWith('54')) {
                 phoneClean = '54' + phoneClean;
             }
 
-            const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/h9UGYG3IwsHJd47SoPsD/webhook-trigger/a3a3393a-4e09-4e2b-9969-aa9fd24889bf';
+            const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/h9UGYG3IwsHJd47SoPsD/webhook-trigger/a3a3393a-4e09-4e2b-9969-aa9fd24889bf';
 
             const payload = {
-                firstName: !isPopup ? document.getElementById('main_first_name').value : 'Lead',
-                lastName: !isPopup ? document.getElementById('main_last_name').value : 'Descarga',
-                email: !isPopup ? document.getElementById('main_email').value : document.getElementById('pop_email').value,
+                firstName: form.querySelector('[data-field="first_name"]').value,
+                lastName: form.querySelector('[data-field="last_name"]').value,
+                email: form.querySelector('[data-field="email"]').value,
                 phone: phoneClean,
                 interest: 'Tecnicatura Superior en Enfermería',
                 source: 'Landing Enfermería - Público 1',
-                formType: isPopup ? 'Descarga Programa' : 'Consulta General',
-                tags: ['landing-2026', isPopup ? 'pdf-download' : 'web-inquiry']
+                formType: type === 'popup' ? 'Descarga Programa' : 'Consulta General',
+                tags: ['landing-2026', 'santa-fe', type === 'popup' ? 'pdf-download' : 'web-inquiry']
             };
 
             try {
-                btn.innerText = 'ENVIANDO...';
+                btn.innerText = 'PROCESANDO...';
                 btn.disabled = true;
 
-                // Enviamos sin 'no-cors' para asegurar que el mapping reference de GHL capture el JSON
-                await fetch(GHL_WEBHOOK_URL, {
+                await fetch(WEBHOOK_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
-                alert('¡Excelente! Tus datos fueron recibidos. Atento a tu WhatsApp, te escribiremos en breve.');
-                e.target.reset();
-                if(!isPopup) generateCaptcha();
-                if(isPopup) togglePopup(false);
+                alert('¡Excelente! Recibimos tus datos. Atento a tu WhatsApp, te escribiremos en breve.');
+                form.reset();
+                updateCaptchas();
+                if(type === 'popup') togglePopup(false);
 
             } catch (err) {
-                console.error('Error enviando a GHL:', err);
-                // Aunque falle el CORS, GHL suele recibir el webhook.
-                alert('¡Datos enviados con éxito! Un asesor te contactará pronto.');
-                e.target.reset();
-                if(isPopup) togglePopup(false);
+                console.error('Error:', err);
+                alert('Hubo un error al enviar. Por favor, reintentá el envío.');
             } finally {
                 btn.innerText = originalText;
                 btn.disabled = false;

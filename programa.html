@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Académico | Tecnicatura en Enfermería</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+                    colors: {
+                        brandBlue: '#3F51B5',
+                        brandCyan: '#4DD0E1',
+                        brandMagenta: '#E91E63',
+                        brandBg: '#F8FAFC',
+                    },
+                    borderRadius: { 'brand': '30px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .table-gradient-header {
+            background: linear-gradient(90deg, #3F51B5 0%, #4DD0E1 100%);
+        }
+    </style>
+</head>
+<body class="bg-brandBg text-slate-800 antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <img src="https://jerarquicos.com/wp-content/uploads/2024/01/jerarquicos-logo.svg" alt="Jerárquicos" class="h-7 md:h-9">
+            <img src="https://superior.cejs.edu.ar/wp-content/instituto/images/logo_instituto_fundacion.jpg" alt="Instituto" class="h-8 md:h-10 rounded shadow-sm">
+        </div>
+    </nav>
+
+    <section class="relative pt-40 pb-20 bg-brandBlue text-white rounded-b-[50px] md:rounded-b-[80px] shadow-xl overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight uppercase">
+                Programa académico de <br>
+                <span class="text-brandCyan">Tecnicatura Superior en Enfermería</span>
+            </h1>
+            <div class="h-2 w-24 bg-brandMagenta mx-auto rounded-full"></div>
+        </div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+    </section>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto -mt-10 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-brand shadow-lg border-t-4 border-brandCyan">
+                <div class="flex items-center gap-4 mb-4 text-brandBlue">
+                    <i data-lucide="target" class="w-8 h-8"></i>
+                    <h2 class="text-xl font-extrabold uppercase tracking-tight">Objetivo de la carrera</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed font-medium">Formar profesionales capacitados en el cuidado integral de la salud con una perspectiva interdisciplinaria y humanística, que contemple la sensibilidad social y la ética de la vida como valores fundamentales.</p>
+            </div>
+            <div class="bg-white p-8 rounded-brand shadow-lg border-t-4 border-brandMagenta">
+                <div class="flex items-center gap-4 mb-4 text-brandBlue">
+                    <i data-lucide="user-check" class="w-8 h-8"></i>
+                    <h2 class="text-xl font-extrabold uppercase tracking-tight">Perfil profesional</h2>
+                </div>
+                <p class="text-slate-600 leading-relaxed font-medium">El Técnico Superior estará capacitado para diagnosticar, planificar y brindar cuidados de enfermería en promoción, prevención y rehabilitación, resolviendo problemáticas en personas y comunidades.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        
+        <div class="mb-16">
+            <h3 class="text-2xl font-black text-brandBlue mb-6 flex items-center gap-3">
+                <span class="bg-brandBlue text-white w-10 h-10 rounded-xl flex items-center justify-center text-sm">01</span>
+                PRIMER AÑO
+            </h3>
+            <div class="overflow-hidden rounded-2xl shadow-xl bg-white border border-slate-100">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="table-gradient-header text-white">
+                            <th class="p-5 font-bold uppercase text-xs tracking-widest">Materia</th>
+                            <th class="p-5 font-bold uppercase text-xs tracking-widest text-center">Cursado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr> <td class="p-5 font-bold text-slate-700">Comunicación</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">1° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Unidad de Definición Institucional I</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">2° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Salud Pública</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Biología Humana I</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Sujeto, Cultura y Sociedad I</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Fundamentos del Cuidado de Enfermería</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Cuidados de Enfermería en la Comunidad y la Familia</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr class="bg-brandCyan/5"> <td class="p-5 font-black text-brandBlue italic">Práctica Profesionalizante I</td> <td class="p-5 text-center text-brandBlue font-black italic">Anual</td> </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mb-16">
+            <h3 class="text-2xl font-black text-brandBlue mb-6 flex items-center gap-3">
+                <span class="bg-brandBlue text-white w-10 h-10 rounded-xl flex items-center justify-center text-sm">02</span>
+                SEGUNDO AÑO
+            </h3>
+            <div class="overflow-hidden rounded-2xl shadow-xl bg-white border border-slate-100">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="table-gradient-header text-white">
+                            <th class="p-5 font-bold uppercase text-xs tracking-widest">Materia</th>
+                            <th class="p-5 font-bold uppercase text-xs tracking-widest text-center">Cursado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr> <td class="p-5 font-bold text-slate-700">Problemáticas Socio Contemporáneas</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">1° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Informática en Salud</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">1° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Unidad de Definición Institucional II</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">2° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Bioseguridad y Medio Ambiente en el Trabajo</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">2° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Sujeto, Cultura y Sociedad II</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Biología Humana II</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Farmacología en Enfermería</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Cuidados de Enfermería a los Adultos y Adultos Mayores</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr class="bg-brandCyan/5"> <td class="p-5 font-black text-brandBlue italic">Práctica Profesionalizante II</td> <td class="p-5 text-center text-brandBlue font-black italic">Anual</td> </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mb-16">
+            <h3 class="text-2xl font-black text-brandBlue mb-6 flex items-center gap-3">
+                <span class="bg-brandBlue text-white w-10 h-10 rounded-xl flex items-center justify-center text-sm">03</span>
+                TERCER AÑO
+            </h3>
+            <div class="overflow-hidden rounded-2xl shadow-xl bg-white border border-slate-100">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="table-gradient-header text-white">
+                            <th class="p-5 font-bold uppercase text-xs tracking-widest">Materia</th>
+                            <th class="p-5 font-bold uppercase text-xs tracking-widest text-center">Cursado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr> <td class="p-5 font-bold text-slate-700">Ética y Responsabilidad Social</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">1° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Inglés Técnico</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">1° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Derecho y Legislación Laboral</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">2° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Cuidados de Enfermería en Salud Mental</td> <td class="p-5 text-center text-slate-500 text-sm font-semibold">2° Cuatrimestre</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Organización y Gestión en Instituciones de la Salud</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Investigación en Enfermería</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr> <td class="p-5 font-bold text-slate-700">Cuidados de Enfermería al Niño y al Adolescente</td> <td class="p-5 text-center text-slate-500 text-sm italic">Anual</td> </tr>
+                        <tr class="bg-brandCyan/5"> <td class="p-5 font-black text-brandBlue italic">Práctica Profesionalizante III</td> <td class="p-5 text-center text-brandBlue font-black italic">Anual</td> </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-brandBg border-2 border-brandBlue rounded-[40px] p-10 md:p-16 text-center shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-6 -right-6 text-brandCyan/10">
+                    <i data-lucide="clock" size="120"></i>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-black text-brandBlue uppercase mb-8 tracking-tight">Horarios de Cursado</h2>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                    <div class="flex flex-col items-center">
+                        <span class="text-brandMagenta font-bold uppercase tracking-widest text-xs mb-2">Días</span>
+                        <p class="text-2xl font-extrabold text-slate-700">Lunes a viernes</p>
+                    </div>
+                    <div class="hidden md:block w-px h-16 bg-slate-300"></div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-brandMagenta font-bold uppercase tracking-widest text-xs mb-2">Franja Horaria</span>
+                        <p class="text-2xl font-extrabold text-slate-700">17:30 hs. a 22 hs.</p>
+                    </div>
+                </div>
+                
+                <p class="mt-10 text-slate-500 text-sm font-medium italic">
+                    * El cursado combina instancias presenciales y virtuales según el cronograma académico.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-400 text-[10px] uppercase tracking-[0.3em] font-bold border-t border-slate-100 bg-white">
+        © 2026 Instituto Jerárquicos Santa Fe | Formación Superior
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

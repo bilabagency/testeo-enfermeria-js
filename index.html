@@ -80,7 +80,7 @@
                         CONOCÉ LA CARRERA
                     </button>
                     <button onclick="togglePopup(true)" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brandBlue transition-all duration-500 font-extrabold py-5 px-10 rounded-full text-lg shadow-xl hover:scale-105">
-                        DESCARGÁ EL PROGRAMA
+                        VER PROGRAMA COMPLETO
                     </button>
                 </div>
             </div>
@@ -143,7 +143,7 @@
         <div class="flex flex-col md:flex-row gap-6 justify-center">
             <button onclick="scrollToId('contacto')" class="bg-brandCyan text-brandBlue font-extrabold py-4 px-10 rounded-full hover:bg-white transition-colors uppercase text-sm shadow-lg">Quiero más info</button>
             <button onclick="togglePopup(true)" class="bg-white text-brandBlue border-2 border-white font-extrabold py-4 px-10 rounded-full hover:bg-brandCyan hover:text-white transition-all uppercase text-sm shadow-xl">
-                Descargar programa completo
+                Ver programa completo
             </button>
         </div>
     </section>
@@ -161,7 +161,7 @@
                     Hablar con un asesor ahora
                 </button>
                 <button onclick="togglePopup(true)" class="border-2 border-brandBlue text-brandBlue font-extrabold py-4 px-10 rounded-full hover:bg-brandBlue hover:text-white transition-all uppercase text-sm">
-                    Descargar programa completo
+                    Ver programa completo
                 </button>
             </div>
         </div>
@@ -228,8 +228,8 @@
         <div class="bg-brandBlue p-8 md:p-12 rounded-[40px] max-w-xl w-full relative shadow-2xl text-white">
             <button onclick="togglePopup(false)" class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"><i data-lucide="x-circle"></i></button>
             <div class="text-center mb-8">
-                <h3 class="text-2xl font-extrabold uppercase tracking-tight">Descargar Programa</h3>
-                <p class="text-brandCyan italic text-sm mt-2 font-semibold tracking-wide">✨ Recibí el PDF y hablá con un asesor especializado.</p>
+                <h3 class="text-2xl font-extrabold uppercase tracking-tight">Ver Programa Académico</h3>
+                <p class="text-brandCyan italic text-sm mt-2 font-semibold tracking-wide">✨ Completá tus datos y accedé al plan de estudios oficial.</p>
             </div>
             <form onsubmit="handleForm(event, 'popup')" class="space-y-4 text-left">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -250,7 +250,7 @@
                     </div>
                 </div>
                 <button type="submit" class="w-full bg-brandMagenta text-white font-extrabold py-5 rounded-2xl shadow-xl hover:brightness-110 transition-all text-lg tracking-wide uppercase">
-                    Descargar programa ahora
+                    Ver programa ahora
                 </button>
             </form>
         </div>
@@ -275,23 +275,16 @@
         }
         updateCaptchas();
 
-        // CONTROL DE VIDEO AUTOPLAY CON SONIDO
+        // CONTROL DE VIDEO
         const videoIframe = document.querySelector('#success-video');
         const player = new Vimeo.Player(videoIframe);
-
-        const observerOptions = { root: null, threshold: 0.6 };
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    player.setVolume(1).then(() => {
-                        player.play().catch(err => console.log("Autoplay bloqueado por el navegador hasta interacción."));
-                    });
-                } else {
-                    player.pause();
-                }
+                    player.setVolume(1).then(() => player.play().catch(() => {}));
+                } else { player.pause(); }
             });
-        }, observerOptions);
-
+        }, { threshold: 0.6 });
         videoObserver.observe(document.querySelector('#success-video-section'));
 
         function scrollToId(id) {
@@ -304,7 +297,7 @@
             document.body.style.overflow = show ? 'hidden' : 'auto';
         }
 
-        // Envío a GHL Webhook
+        // Envío a Webhook y Redirección
         async function handleForm(e, type) {
             e.preventDefault();
             const form = e.target;
@@ -333,8 +326,8 @@
                 phone: phoneClean,
                 interest: 'Tecnicatura Superior en Enfermería',
                 source: 'Landing Enfermería - Público 1',
-                formType: type === 'popup' ? 'Descarga Programa' : 'Consulta General',
-                tags: ['landing-2026', 'santa-fe', type === 'popup' ? 'pdf-download' : 'web-inquiry']
+                formType: type === 'popup' ? 'Ver Programa' : 'Consulta General',
+                tags: ['landing-2026', 'santa-fe', type === 'popup' ? 'plan-view' : 'web-inquiry']
             };
 
             try {
@@ -347,15 +340,14 @@
                     body: JSON.stringify(payload)
                 });
 
-                alert('¡Excelente! Recibimos tus datos. Un asesor se comunicará por WhatsApp en menos de 5 minutos.');
-                form.reset();
-                updateCaptchas();
-                if(type === 'popup') togglePopup(false);
+                alert('¡Excelente! Recibimos tus datos. Ahora te redirigimos al programa académico.');
+                
+                // Redirección a programa.html
+                window.location.href = 'programa.html';
 
             } catch (err) {
                 console.error('Error:', err);
                 alert('Hubo un error al enviar. Por favor, reintentá el envío.');
-            } finally {
                 btn.innerText = originalText;
                 btn.disabled = false;
             }

@@ -24,6 +24,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -44,7 +45,7 @@
         html { scroll-behavior: smooth; }
         .hero-overlay {
             background-image: linear-gradient(to right, rgba(63, 81, 181, 0.95) 0%, rgba(63, 81, 181, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%), 
-                              url('https://images.pexels.com/photos/35645531/pexels-photo-35645531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+                            url('https://images.pexels.com/photos/35645531/pexels-photo-35645531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
             background-size: cover;
             background-position: center;
         }
@@ -279,6 +280,15 @@
     <script>
         lucide.createIcons();
 
+        // ----------------------------------------------------
+        // HELPER PARA OBTENER COOKIES DE META (NECESARIO PARA CAPI)
+        // ----------------------------------------------------
+        const getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        };
+
         // Lógica de Captcha
         let currentCaptchaResult = 0;
         function updateCaptchas() {
@@ -313,7 +323,9 @@
             document.body.style.overflow = show ? 'hidden' : 'auto';
         }
 
-        // Envío a Webhook y Redirección
+        // ----------------------------------------------------
+        // LOGICA DE ENVÍO OPTIMIZADA PARA CONVERSIONES CAPI + PIXEL
+        // ----------------------------------------------------
         async function handleForm(e, type) {
             e.preventDefault();
             const form = e.target;
@@ -335,6 +347,11 @@
 
             const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/h9UGYG3IwsHJd47SoPsD/webhook-trigger/a3a3393a-4e09-4e2b-9969-aa9fd24889bf';
 
+            // GENERACIÓN DE ID ÚNICO Y RECUPERACIÓN DE COOKIES
+            const eventId = 'lead_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
+            const fbp = getCookie('_fbp');
+            const fbc = getCookie('_fbc');
+
             const payload = {
                 firstName: form.querySelector('[data-field="first_name"]').value,
                 lastName: form.querySelector('[data-field="last_name"]').value,
@@ -343,31 +360,38 @@
                 interest: 'Tecnicatura Superior en Enfermería',
                 source: 'Landing Enfermería - Público 1',
                 formType: type === 'popup' ? 'Ver Programa' : 'Consulta General',
-                tags: ['landing-2026', 'santa-fe', type === 'popup' ? 'plan-view' : 'web-inquiry']
+                tags: ['landing-2026', 'santa-fe', type === 'popup' ? 'plan-view' : 'web-inquiry'],
+                // DATOS TÉCNICOS AGREGADOS PARA META CAPI
+                eventId: eventId,
+                fbp: fbp,
+                fbc: fbc,
+                userAgent: navigator.userAgent,
+                eventSourceUrl: window.location.href
             };
 
             try {
                 btn.innerText = 'PROCESANDO...';
                 btn.disabled = true;
 
+                // 1. Envío al Webhook de GHL (Backend CAPI)
                 await fetch(WEBHOOK_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
-                // TRACKING DE CONVERSIÓN PARA META
+                // 2. Disparo del Píxel (Frontend) con DEDUPLICACIÓN
                 if (typeof fbq !== 'undefined') {
                     fbq('track', 'Lead', {
                         content_name: 'Inscripción Enfermería 2026',
                         content_category: 'Educación Superior'
-                    });
+                    }, { eventID: eventId }); 
                 }
 
                 alert('¡Excelente! Recibimos tus datos. Ahora te redirigimos al programa académico.');
                 
-                // Redirección a programa.html
-                window.location.href = 'programa.html';
+                // Redirección con URL ABSOLUTA
+                window.location.href = 'https://enfermeria.carrerasjerarquicos.com/programa.html';
 
             } catch (err) {
                 console.error('Error:', err);
